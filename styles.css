@@ -1,0 +1,43 @@
+body{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+}    
+#menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    gap: 40px;
+}
+.cell{
+    background-color: #000;
+}
+
+#canvas{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0px;
+    padding: 0px;
+    border: 5px solid #000;
+}
+button{
+    border:none;
+    background-color: #3495eb;
+    border-radius: 5px;
+    width: 200px;
+    height: 50px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 24px;
+}
+button:hover{
+    border: 2px solid #000;
+    cursor: pointer;
+}
+button:active{
+    background-color: #004e94;
+}
