@@ -28,12 +28,41 @@ function drawCell() {
     cells = Array.from(cells)
     cells.forEach ((cell) => {
         cell.addEventListener("mouseenter", () => {
+            randColor(cell);
             if (parseFloat(cell.style.opacity) < 1) {
                 opacity = (parseFloat(cell.style.opacity) + 0.1);
                 cell.style.opacity = opacity;
             }
         });
     });
+}
+
+function randColor(cell){
+    let randNum = Math.floor(Math.random() * 7) + 1;
+    switch (randNum) {
+        case 1:
+            cell.style.backgroundColor = "red";
+            break;
+        case 2:
+            cell.style.backgroundColor = "orange";
+            break;
+        case 3:
+            cell.style.backgroundColor = "yellow";
+            break;
+        case 4:
+            cell.style.backgroundColor = "green";
+            break;
+        case 5:
+            cell.style.backgroundColor = "blue";
+            break;
+        case 6:
+            cell.style.backgroundColor = "indigo";
+            break;
+        case 7:
+          cell.style.backgroundColor = "violet";
+          break;
+    }
+
 }
 
 let cells = document.getElementsByClassName("cell");
