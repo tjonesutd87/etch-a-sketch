@@ -14,7 +14,7 @@ function createGrid (num) {
       cell.setAttribute("class", "cell");
       cell.style.width = `${cellWidth}px`;
       cell.style.height = `${cellHeight}px`;
-      cell.style.opacity = "10%";
+      cell.style.opacity = 0.1;
       canvas.appendChild(cell);
    }
 }
@@ -24,11 +24,14 @@ createGrid(16);
 
 
 function drawCell() {
+    let opacity;
     cells = Array.from(cells)
     cells.forEach ((cell) => {
         cell.addEventListener("mouseenter", () => {
-        cell.style.opacity = "100%"
-        console.log("hi");
+            if (parseFloat(cell.style.opacity) < 1) {
+                opacity = (parseFloat(cell.style.opacity) + 0.1);
+                cell.style.opacity = opacity;
+            }
         });
     });
 }
@@ -63,6 +66,6 @@ createButton.addEventListener("click", () => {
 
 resetButton.addEventListener("click", () =>  {
    cells.forEach ((cell) => {
-      cell.style.opacity = "10%";
+      cell.style.opacity = 0.1;
    });
 });
