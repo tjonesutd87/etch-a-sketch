@@ -96,5 +96,6 @@ createButton.addEventListener("click", () => {
 resetButton.addEventListener("click", () =>  {
    cells.forEach ((cell) => {
       cell.style.opacity = 0.1;
+      cell.style.backgroundColor = "#fff";
    });
 });
